@@ -23,7 +23,7 @@ Ah yes, [Warp Gate](https://github.com/trioderegion/warpgate/). Without this mod
 These modules are not needed in order to use SWADE but I strongly recommend you take a look at them. They may enhance your game and make it more immersive than SWIM alone.
 
 ## Better Rolls for SWADE (aka BRSW aka BR2)
-[Better Rolls for SWADE](https://github.com/javierriveracastro/betteroll-swade) is by no means required but it offers great new chat cards to make your rolls and allows me to tap into to make some nifty stuff automatic, for example Ammo Management. SWIM also supports it in the sense of playing its SFX when BR2 does something appropriate (like unshaking).
+[Better Rolls for SWADE](https://github.com/javierriveracastro/betteroll-swade) is by no means required but it offers great new chat cards to make your rolls and allows me to tap into to make some nifty stuff automatic, for example Ammo Management. SWIM also supports it in the sense of playing its SFX when BR2 does something appropriate (like unshaking). It also offers you a way to automate effects of certain powers created using the Power Effect Builder. How this is set up is explained [here](https://github.com/SalieriC/SWADE-Immersive-Macros/wiki/Better-Rolls-2-Integration).
 
 ## Health Estimate
 [Health Estimate](https://foundryvtt.com/packages/healthEstimate/) is a cool immersion module and thus works great with SWIM. I highly recomment it as it is so much more immersive to say and read "he is a bit beatin'" than to say/read "he has one Wound". Health Estimate should work fine out of the box once activated but you can easily set it up to your liking if you want.  
