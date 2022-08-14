@@ -6,7 +6,7 @@ This is one way to show me that my module is actually used and well-received.
 
 ## Usage instructions
 You'll find all the macros in a new compendium delivered by the module. It contains all the macros. You can either import the macros or replace the code of your existing macros. Once that is done you can start using them although I strongly suggest taking a look at the module settings. There are quite a few which might be interesting for you.  
-**Please read this ReadMe in full, as it contains important instructions on how to use this module.**
+**Please read this Wiki in full, as it contains important instructions on how to use this module.**
 
 ## License
 The Code of the macros and modules is licensed under the GPU 3.0 License ([see License](https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/LICENSE)).
