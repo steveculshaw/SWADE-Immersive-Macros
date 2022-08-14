@@ -87,6 +87,7 @@ In terms of other SFX: The macro again uses the Incapacitation sfx and the wound
 ### Personal Health Centre  
 **Requirements:**
 - [Health Estimate](https://foundryvtt.com/packages/healthEstimate/)  
+
 **Compatibility:**
 - [Sequencer](https://foundryvtt.com/packages/sequencer) (Enabling VFX)
 
@@ -132,7 +133,7 @@ Additionally, the user can set up a light colour for the light source and it wil
 **Requirements:** Chase layouts/scenes (included in a compendium) and a roll table with card images.  
 **Immersion setting:** System card deal sound.  
 **Description:**  
-This will set your chase scene up with little effort. Accessed easily on the tile controls on any scene (the car icon, added by the system and overwritten by SWIM). It places the cards automatically in the correct position. See the [Chase Scenes documentation](https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/documentation/Chase%20Scenes.md) for details.  
+This will set your chase scene up with little effort. Accessed easily on the tile controls on any scene (the car icon, added by the system and overwritten by SWIM). It places the cards automatically in the correct position. See the [Chase Scenes documentation](https://github.com/SalieriC/SWADE-Immersive-Macros/wiki/Chase-Scenes) for details.  
 *This requires the chase scenes that come in a compendium with this module.* These carry various options, players have in a chase, made with permission from Shane.  
 If you don't want to use my chase layouts you can also change the settings either in the dialogue after pressing the button mentioned above or by changing the default values in the SWIM module configurations.  
 **Note:** This currently uses a roll table instead of a card deck, thus you'll need a chase card table. One you can import is included in a compendium in SWIM for your convenience.  
