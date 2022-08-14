@@ -97,7 +97,7 @@ As of version 0.12.0, the macro supports a way to allow NPCs to fully use the am
 This is now the default behaviour. To activate the former behaviour (NPCs need ammo items in their inventory), just head to the SWIM module settings and activate it.  
 
 # Better Rolls 2 integration  
-If you're using Better Rolls 2, there is a way to fully automate the Shooting part of the macro. Each skill roll from the weapon will then execute the macro, play the sfx (if set up) and use the ammo properly. To set this up you need to set it as a "runSkillMacro" [Global Action](https://github.com/javierriveracastro/betteroll-swade/blob/version_2/GLOBAL_ACTIONS.md) in Better Rolls 2. This is not so difficult as you might think:  
+If you're using Better Rolls 2, there is a way to fully automate the Shooting part of the macro. Each skill roll from the weapon will then execute the macro, play the sfx (if set up) and use the ammo properly. To set this up you need to set it as a "runSkillMacro" [Global Action](https://github.com/javierriveracastro/betteroll-swade/wiki/Global-Actions) in Better Rolls 2. This is not so difficult as you might think:  
 1. Import the macro `SWIM: Ammo usage` from the compendium into your world.  
 2. Head over to your module settings and click on "World Global actions" in the BR2 settings.  
 3. Click "New action".  
