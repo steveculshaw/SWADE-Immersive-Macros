@@ -44,6 +44,7 @@ One of the most complex macros I ever wrote. It soaks and applies Wounds. It tri
 It also supports SFX again. You can configure a path to your desired SFX in the modules configuration.  
 You can also use the Gritty Damage setting rule by adding the name of your Injury Table in the modules config. It must be the *exact* name of your Injury Table, best copy and paste it. **Gritty damage is only used for non-GM accounts.** Gritty damage will not be used when you have not set up an ID. So just leave this setting empty if you don't desire to use it.
 <p align="center"> <img src="https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/Soaking%20Wounds.jpg?raw=true"> </p>  
+Since its creation this macro became more and more advanced however. As of today it not just features adding/soaking wounds but also makes Vigor Rolls for you (if you wish) on Incapacitation to avoid Bleeding Out/dying and it also makes Vigor Rolls for you when you already are Bleeding out. It is as a complete *Damage Centre* as it can be and indeed, this is likely how I'll rename it in the future.  
 
 ### Ammo Management  
 **Immersion setting:** SFX (optional, user provided).  
