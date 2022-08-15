@@ -107,6 +107,7 @@ Finally it can also be used to heal the target even if you don't have permission
 **Immersion setting:**  
 - Light animation & colour  
 - Sound effect  
+
 **Description:**  
 This macro is based on a macro from [@Sky#9453](https://github.com/Sky-Captain-13/foundry) and supported DnD vision and lighting. I altered it to suit Savage Worlds. I have to say though, that information on vision and illumination is very lackluster in SWADE with regards to VTT software. It works fine on an actual tabletop but not with dynamic lighting on VTTs. I had to bring some personal taste in but I tried to stay as true to the rules as I could.  
 Here are the options explained:
@@ -118,6 +119,7 @@ Here are the options explained:
 - Bullseye: 4" beam of bright light with an angle of 52.5 degree.(1)  
 - Torch: 4" radius of bright light.  
 - Flashlight: 10" beam of bright light in an angle of 52.2 degrees.(1)  
+
 **Vision Type:**  
 - No Change: Does not change the current settings.  
 - Pitch Darkness (0"): The token cannot see past itself.  
@@ -126,6 +128,7 @@ Here are the options explained:
 - Low Light Vision: As dim.  
 - Infravision: As dim.  
 - Full Night Vision: Token has bright vision of 1000" (the maximum allowed by Foundry).  
+
 In general it is best to set up a universal/global light source instead of touching the vision type as that's what SWADE relies on. But the options are there in case the GM forgets to set it up and needs to act quickly.  
 Additionally, the user can set up a light colour for the light source and it will be animated with the "torch" animation from core, but rather subtle.  
 
@@ -175,8 +178,10 @@ In Hellfrost this represents Silver Scields, in Settings which don't use a sub-c
 **Immersion setting:** SFX & VFX
 **Requirements:**  
 - [Warp Gate](https://github.com/trioderegion/warpgate)  
+
 **Compatibility:**
 - [Sequencer](https://foundryvtt.com/packages/sequencer) (Enabling VFX)
+
 **Description:**  
 The first macro in a lot of things. Writing it was challenging but it seems to work reasonably well. Please report any bugs as usual.  
 This macro allows players and GMs alike to shape change their characters into other creatures. It automatically shows those which are available and you can choose whether to change into a new form or back to your regular form. [Warp Gate](https://github.com/trioderegion/warpgate) by honeybadger is required to exchange the token on the canvas, so you can't access it without it. The macro will carry over every values that are required, including wounds, fatigue, conviction, power points, etc. Even on changing back all those values will be updated. The macro should relly take care of everything for you.  
@@ -193,8 +198,10 @@ Here is a short video that showcases the macro (visual effect by JB2A, not inclu
 **Immersion setting:** SFX & VFX
 **Requirements:**  
 - [Warp Gate](https://github.com/trioderegion/warpgate)  
+
 **Compatibility:**
 - [Sequencer](https://foundryvtt.com/packages/sequencer) (Enabling VFX)
+
 **Description:**  
 The Mighty Summoner allows players to summon creatures to the canvas.  
 First you need to import the `[SWIM] Summon Creature` folder structure from the actor compendium. In this folder you now place all the actors your players shall be able to summon. You may sort them to the rank folders but that is not necessary. Important is that they are all in the `Summon Creature Presets` sub-folder of `[SWIM] Summon Creature` or the respective sub-folders of `Summon Creature Presets`.  
@@ -231,6 +238,7 @@ When stopping (deleting) the combat, the game will automatically stop the combat
 **Requirements:**  
 - [Warp Gate](https://github.com/trioderegion/warpgate)  
 - [SUCC](https://github.com/SalieriC/SUCC)  
+
 **Immersion setting:** None atm.  
 **Description:**  
 An immensely powerful way of setting up Active Effects for the smite, darksight, arcane protection, burrow, damage field, protection, growth/shrink, deflection, sloth/speed, invisibility, confusion, beast friend and boost/lower powers (more to come) on multiple targets. It sets the AE up with the appropriate duration (also respecting the concentration edge if the caster (selected token) has it), end of turn message and so on.  
