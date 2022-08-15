@@ -46,7 +46,7 @@ You can also use the Gritty Damage setting rule by adding the name of your Injur
 <p align="center"> <img src="https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/Soaking%20Wounds.jpg?raw=true"> </p>  
 Since its creation this macro became more and more advanced however. As of today it not just features adding/soaking wounds but also makes Vigor Rolls for you (if you wish) on Incapacitation to avoid Bleeding Out/dying and it also makes Vigor Rolls for you when you already are Bleeding out. It is as a complete *Damage Centre* as it can be and indeed, this is likely how I'll rename it in the future.  
 
-https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/damage_centre_showcase.webm.mov?raw=true
+https://user-images.githubusercontent.com/1230041/184658399-b29e4ab1-e100-4d14-afa2-319f12da2db0.mov
 (Assets used in the scene are from ForgottenAdventures and not part of SWIM.)  
 
 ### Ammo Management  
