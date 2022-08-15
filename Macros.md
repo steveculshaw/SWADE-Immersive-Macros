@@ -35,7 +35,7 @@ This macro comes in two variants: SWADE and SWD. I like the SWD rules regarding 
 **Description:**  
 This macro is very similar to the (Un-)Shake macro but handles Stunned. If the selected token (needs one selected) is not Stunned, it will be marked as such, including all the effects that come with it. Otherwise it will initiate a roll to unstun and adds/removes conditions according to the result. It is aware of Snake Eyes. It supports SFX on applying Stunned in the same way as (Un-)Shake. **Important:** Set up the path to your prone image to the exact same path as your prone image in the modules setting. This is not necessary if you have imported the CUB Contion Lab file (modules/swim/assets/imports/). If you use the system included status markers the path is: `systems/swade/assets/icons/status/status_prone.svg`.  
 
-### Soak Damage
+### Soak Damage / Damage Centre
 **Requirements:** None.  
 **Immersion setting:** SFX.  
 **Suggested icon:** `modules/swim/assets/icons/status_markers/3-Incapacitated.png`  
