@@ -34,7 +34,7 @@ This macro comes in two variants: SWADE and SWD. I like the SWD rules regarding 
 **Suggested icon:** `modules/swim/assets/icons/status_markers/2-Stunned.png`  
 **Description:**  
 This macro is very similar to the (Un-)Shake macro but handles Stunned. If the selected token (needs one selected) is not Stunned, it will be marked as such, including all the effects that come with it. Otherwise it will initiate a roll to unstun and adds/removes conditions according to the result. It is aware of Snake Eyes. It supports SFX on applying Stunned in the same way as (Un-)Shake. **Important:** Set up the path to your prone image to the exact same path as your prone image in the modules setting. This is not necessary if you have imported the CUB Contion Lab file (modules/swim/assets/imports/). If you use the system included status markers the path is: `systems/swade/assets/icons/status/status_prone.svg`.  
-The function supports modifiers from Active Effects. To use it create an active effect with the attribute key `SWIM.unStunMod` (case sensitive), the change mode `Add` and a value of your choosing. A bonus must not have a `+` in front of the number, a penalty needs a `-` in front of the number.
+The function supports modifiers from Active Effects. To use it create an active effect with the attribute key `SWIM.unStunMod` (case sensitive), the change mode `Add` and a value of your choosing. A bonus must not have a `+` in front of the number, a penalty needs a `-` in front of the number. It only applies as long as the label (name) of the AE is not equal to any recognised Edges or Hindrances (currently only Combat Reflexes).
 
 ### Soak Damage / Damage Centre
 **Requirements:** None.  
