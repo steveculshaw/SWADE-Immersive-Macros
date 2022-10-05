@@ -6,13 +6,13 @@ Especially useful for macro and module devs may be the following helper function
 
 ### Get Macro Variables
 Macros get a number of variables from FVTT core directly, namely `speaker`, `character`, `actor` and `token`. These are usually not available in other contexts however which is why SWIM offers a simple way to get them:  
-`swim.get_macro_variables()`  
+`async swim.get_macro_variables()`  
 Returns the four variables available in script macros. Best used like this:  
 `const { speaker, character, actor, token } = await swim.get_macro_variables()`  
 
 ### Critfail Check
 Checks if a roll made was a critical failure.  
-`swim.critFail_check(wildcard, roll)`
+`async swim.critFail_check(wildcard, roll)`
 - `wildcard` {boolean}: Wild Card status of the character that made the roll. If `false` it will make another roll `1d6x` according to the SWADE core rules, if `true` the script will just compare the both dice.  
 - `roll` {object}: The roll that was made and needs to be checked for a critfail.  
 It returns `true` in case of a critfail or `false` if not.  
@@ -20,11 +20,11 @@ It returns `true` in case of a critfail or `false` if not.
 
 ### Get Benny Image
 Returns the file path of the *back side* of the benny configured in the SWADE core settings.  
-`swim.get_benny_image()`
+`async swim.get_benny_image()`
 
 ### Check Bennies
 Checks the passed token for available Bennies.  
-`swim.check_bennies(token)`
+`async swim.check_bennies(token)`
 - `token` {object}: The token you want to check for Bennies.  
 Returns `{ tokenBennies, gmBennies, totalBennies }`.  
 - `tokenBennies` {number}: The amount of Bennies the *token* has.  
@@ -34,7 +34,7 @@ It assumes that non Wild Cards have 0 Bennies and checks for `Luck` and `Great L
 
 ### Spend Benny
 Checks for avvailable Bennies first (see above) and spends one if available. If the token has none and the player is a GM, it spends a GM Benny.  
-`swim.spend_benny(token, message)`  
+`async swim.spend_benny(token, message)`  
 - `token` {object}: The token for which a Benny shall be spent.  
 - `message` {boolean}: If `true` a chat message will be created that notifies about the spent Benny.
 Note that the game will show the benny flip if DiceSoNice! is active.  
@@ -46,28 +46,33 @@ This is especially useful for developers who want to relay some code to GMs to e
 
 ### Wait
 Wait a specified amount of *mili*seconds before executing the rest of the script. Especially useful for sound and video effects to not play at the same time. It *needs* to be awaited.  
-`swim.wait(ms)`  
+`async swim.wait(ms)`  
 - `ms` {number}: The amount of time to pause script execution in miliseconds.  
 This is basically a planned delay in script execution. Use it responsibly, too large numbers can make one think your script is laggy.  
 
 ### Get official class
 This returns the proper html div tag for the installed an active rules compendium module.  
-`swim.get_official_class()`  
+`async swim.get_official_class()`  
 It currently supports the Savage Worlds Pathfinder, Deadlands, Sprawlrunners and SWADE Core modules in this priority order. This means that the divider will be used whichever is first in the aformentioned list if multiple are activated. So if you were to use Deadlands and SWADE Core in your world, the function would return the Deadlands class.  
 
 ### Get Actor SFX
 Gets and returns all the SFX file paths from an actor. Will return the default ones if the paths are not found or labeled `NULL` (*case sensitive*). (There currently only is a default one for becoming shaken, thus the other will returned as `undefined`.)  
-`swim.get_actor_sfx(actor)`  
+`async swim.get_actor_sfx(actor)`  
 - `actor` {object}: The actor on which to search the sfx file paths.  
 Returns the four sfx file paths. Best used like this:  
 `const { shakenSFX, deathSFX, unshakeSFX, soakSFX } = await swim.get_actor_sfx(actor)`  
 
 ### Play SFX
 This just plays the sfx with the provided settings for everyone.  
-`swim.play_sfx(sfx, volume, playForAll)`  
+`async swim.play_sfx(sfx, volume, playForAll)`  
 - `sfx` {string}: The file path to the audio file.  
 - `volume` {number}: The volume level on which to play the audio between 0 and 1. Will use default settings of SWIM if undefined.  
 - `playForAll` {boolean}: Determines whether or not the SFX should be played for everyone (true) or just the current user (false). It defaults to true.
+
+### Get Folder Contents
+This returns all contents of a folder and its sub-folders up to three layers deep, regardless of permission.  
+`swim.get_folder_contents(folderName)`  
+- `folderName` {string}: A unique folder name.  
 
 ## Feature Functions
 The following functions present the core features of SWIM. They are probably less useful for macro and module devs but presented here anyway in case you want to utilise them.  
