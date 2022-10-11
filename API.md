@@ -74,6 +74,12 @@ This returns all contents of a folder and its sub-folders up to three layers dee
 `swim.get_folder_contents(folderName)`  
 - `folderName` {string}: A unique folder name.  
 
+### Run Migration
+This will run the migration of SWIM that changes items and actors to the new setup (converts additional stats to flags).  
+`(async) swim.run_migration(actor, item)`  
+- `actor` {object}: A swade actor, if you only have a token pass `token.actor`, the migration will then update the tokens actor *and* the actor it originated from as well as all their items. If you don't wish to migrate an actor pass it as a boolean and make it `false`.  
+- `item` {object}: A swade item, the migration will then update the item *only* the actor remains unchanged. If you don't wish to migrate an item pass it as a boolean and make it `false`.  
+
 ## Feature Functions
 The following functions present the core features of SWIM. They are probably less useful for macro and module devs but presented here anyway in case you want to utilise them.  
 Note that all of them except the BR2 ones get the macro variables (see above) first, so they really only work on selected token(s). The BR2 ones need the BR2 variables passed to function.  
