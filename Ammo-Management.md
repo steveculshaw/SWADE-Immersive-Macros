@@ -108,4 +108,4 @@ Now that this is done (don't forget to save!), you are ready to go. When droppin
 This is also the reason you must not add the notation to affect items as shown above. The Ammo Management will use the weapons name and set you up.  
 When you change the loaded ammo, the AE is immediately removed.  
   
-* The most frequently used property is likely `system.ap` to change armor penetration of a weapon. To find other paths you can always ask in the Foundry Discord SWADE channel or if you are a dev just use the console to get a weapon item to figure out the property path you need.  
+`*` The most frequently used property is likely `system.ap` to change armor penetration of a weapon. To find other paths you can always ask in the Foundry Discord SWADE channel or if you are a dev just use the console to get a weapon item to figure out the property path you need.  
