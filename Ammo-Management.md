@@ -1,32 +1,32 @@
 # Acknowledgement  
 This macro is actually several scripts with one goal: To completely overhaul the ammo usage of the core system by introducing new features, a way to handle grenades and other consumable weapons, sound effects and more. It even supports ammo for melee weapons.  
-In order to use one of these macros, you first need to do some initial setup. This is required because the macro relies heavily on additional stats from the SWADE system. Currently these must be provided by the user but hopefully I can provide them with the module itself.  
+Please read this wiki page carefully to get an idea of the features and how they work.  
 
 ## Current Features:
 - Reduces amount of current `Shots` in the weapon, d'oh!.  
 - Does not need to be set up for each weapon, one macro to rule them all.  
 - Reloads a weapon at will.  
 - - Supports different kinds of ammo (i.e. "Bullets, Large"; "Bullets, Large (AP)"; "Bullets, Large (Hollow Point)" and so on).  
-- - Stores information about currently loaded ammo in the weapon itself.  
+- - Stores information about currently loaded ammo in the weapons SWIM config (see below).  
 - - Supports reloading the weapon with another kind of ammo at will (will give back the remaining ammo in the weapon).  
-- - Ammo must be set up as a `gear` type item.
+- - Ammo must be set up as a `gear` type item (consumable is not supported atm).
 - - Using the last amount of the ammo item will **not** delete the item from the inventory because one might want to swap ammo later.  
-- - Offers a way to only load a single bullet instead of the entire weapon (i.e. for revolvers).  
+- - Offers a way to only load a single bullet instead of the entire weapon (i.e. for revolvers). There is a module setting to make this the default behaviour.  
 - Supports weapons that do not require a reload action (i.e. bows).  
 - - Such weapons must be marked (system offers this by default).
 - - Such weapon *must not* have Shots of anything other than `0`. So put `0` in both Shots fields on the weapon.  
 - - Such weapons use the ammo from the inventory instead of the one on the weapon.  
-- - The Ammo Management (enhanced) macro will always use the ammo given in the selection of the dialogue.  
-- - Since BR2 does not open the dialogue, the BR2 integration *requires* the user to set up the `Loaded Ammo` additional stat (see below). The macro will then always use the ammo which is present in this field. For changing ammo just use the reload option of the Ammo Management (enhanced) macro and it'll set up the chosen ammo in that field without doing anything else.  
-- Support for `Charge Packs` (i.e. batteries, gas tanks, ghost rock etc.):  
+- - The Ammo Management macro will always use the ammo given in the selection of the dialogue.  
+- - Since BR2 does not open the dialogue, the BR2 integration *requires* the user to set up the `Loaded Ammo` config (see below). The macro will then always use the ammo which is present in this field. For changing ammo just use the reload option of the Ammo Management macro and it'll set up the chosen ammo in that field without doing anything else.  
+- Support for `Charge Packs` (i.e. batteries, gas tanks, ghost rock, magazines etc.):  
 - - One `Charge Pack` will reload all current `Shots` in a weapon.  
 - - Remaining `Shots` on weapons are lost upon reloading with a `Charge Pack`.  
-- - If you change from one `Charge Pack` to another (for changing ammo types), it only refills the old ammo if the current shots are equal the maximum shots in the weapon, otherwise remaining shots are lost as there is no way to track remaining shots on Charge Packs. This makes it somewhat possible to use Charge Packs as magazines but Players will then always *throw away* magazines which are not full. This is very unlikely to be ever changed as it would conflict with the way Charge Packs were intended (they shall always reload the entire weapon, no matter the max charges of a weapon, so storing remaining charges on Charge Packs is not an option).  
+- - If you change from one `Charge Pack` to another (for changing ammo types), it only refills the old ammo if the current shots are equal to the maximum shots in the weapon, otherwise remaining shots are lost as there is no way to track remaining shots on Charge Packs. This makes it somewhat possible to use Charge Packs as magazines but Players will then always *throw away* magazines which are not full. This is very unlikely to be ever changed as it would conflict with the way Charge Packs were intended (they shall always reload the entire weapon, no matter the max charges of a weapon, so storing remaining charges on Charge Packs is not an option).  
 - - `Charge Pack` ammo will always overwrite the single bullet reload (see above) as they are intended to always reload the entire *magazine*.  
 - Support for `Consumable Weapons` (i.e. throwing knives, grenades, Spears, etc.).  
 - - The Macro will ignore current and maximum `Shots` on `Consumable Weapons` and instead uses their `Quantity` as a measurement of how many are left.  
 - - Using the last `Consumable Weapon` will delete the item from the inventory. (Disabled in BR2 integration because that breaks rerolls.)
-- - BR2 integration only: Also supports weapons which can be thrown but don't need to. Currently it checks for "Athletics", "Athletics (Throwing)", "Athletics (Explosives)" and  "Throwing" and assumes that consumable weapons always use either. If a consumable weapon does not use any of these skills, the macro stops. If an action is used in BR2 that initiates a roll with one of these skills, the macro continues as usual.
+- - BR2 integration only: Also supports weapons which can be thrown but don't need to. Currently it checks for "Athletics", "Athletics (Throwing)", "Athletics (Explosives)" and  "Throwing" and assumes that consumable weapons always use either. If a consumable weapon does not use any of these skills, the macro stops. If an action is used in BRSW (see below) that initiates a roll with one of these skills, the macro continues as usual.
 - Extensive support for Sound Effects (sfx), the following sfx can be configured:  
 - - Reload sfx.  
 - - Shooting/using sfx.  
@@ -34,14 +34,14 @@ In order to use one of these macros, you first need to do some initial setup. Th
 - - Silenced shooting sfx.  
 - - Silenced autofire sfx.  
 - - Empty sfx (when the current `shots` are exactly zero).  
-- - A sound effect for "burst" is planned but not yet done.  
+- - For bursts (expended shots less than 5) the macro will play the shooting SFX multiple times.  
 - Each sfx can be set up individually for each weapon.  
-- Optional integration for [Better Rolls 2 (BR2)](https://foundryvtt.com/packages/betterrolls-swade2).
-- Now also features the ability to play SFX only without the need for ammunition. For this just set the Ammo on the weapon to be `NONE` (exactly like this). This may be useful if you want SFX for melee weapons. It uses the same sfx path structure (see below), so you'll have the same sfx for melee and ranged attacks unfortunately.  
+- Optional integration for [Better Rolls (BRSW)](https://foundryvtt.com/packages/betterrolls-swade2).
 - Game setting, allowing GMs to rule that NPCs do not use Ammo items from inventory. NPCs will still use Ammo in the weapon (magazines, clips, etc.) but won't require an item to draw ammo from. Instead they will just reload the weapon to the maximum shots (or by 1 shot if "Single Reload" is checked) without using an item from the inventory. This is especially useful for official modules which do not populate actors with ammunition, making prep for SWIM compatibility a little easier.  
 
-# Additional Stats  
-If you don't know about additional stats, you can read about them [here](https://gitlab.com/peginc/swade/-/wikis/settings/setting-configurator).  
+# SWIM Config  
+As of SWIM version 1, no more additional stats are needed. Instead SWIM offers a config window accessed by the SWIM button in the header of an item:  
+![SWIM Weapon Config](https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/ammo_mgm/weapon_config.png?raw=true)
 
 ## Setup of Additional Stats  
 Head to the System Settings, click on the "Open Setting Configurator button and scroll down. You can create additional stats for items there. The screenshot below shows the stats you need to create. The "Stat Key", "Data Type" and "Has Max Value" must be set up exactly like in the Screenshot. Only the "Label" may be different.  
