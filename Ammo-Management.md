@@ -43,71 +43,51 @@ Please read this wiki page carefully to get an idea of the features and how they
 As of SWIM version 1, no more additional stats are needed. Instead SWIM offers a config window accessed by the SWIM button in the header of an item:  
 ![SWIM Weapon Config](https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/ammo_mgm/weapon_config.png?raw=true)
 
-## Setup of Additional Stats  
-Head to the System Settings, click on the "Open Setting Configurator button and scroll down. You can create additional stats for items there. The screenshot below shows the stats you need to create. The "Stat Key", "Data Type" and "Has Max Value" must be set up exactly like in the Screenshot. Only the "Label" may be different.  
-<p align="center"> <img src="https://raw.githubusercontent.com/SalieriC/SWADE-Immersive-Macros/main/img/BR2_integration/shooting_additional-stats.jpg"> </p>  
-Don't forget to save when you're done.  
-## Explanation  
-Here is an explanation on what each of these do. Read it carefully as it will tell you on which items these need to be set up.  
-- "isPack" (ammo items): Marks an items as a charge pack. If a weapon uses this as ammunition, it will only use *one quantity* of the ammo to reload the entire weapon; remaining shots are lost upon reloading or changing the ammo type. This is something like a battery or gas tank.  
-- "loadedAmmo" (weapons): This shows which ammo is currently loaded in the weapons magazine or the like. It is important for the macro to know what ammo type is currently loaded in the weapon, when changin the ammo type. The macro can then put remaining shots back in the quantity of the previously loaded ammo unless it's a charge pack).  
-- "isConsumable" (consumable weapons): Consumable weapons are most commonly thrown weapons like daggers, knives, grenades, spears and the like. This stat will tell the macro that it shall reduce the *quantity* of the weapon, instead of the shots (this is important because of the carry weight calculation, which doesn't work with the shots stats of weapons).  
-- "sfx" (weapons): Here you can set up all the sfx of a weapon. See below for further details.  
-- "silenced" (weapons): Some weapons may be equipped with a suppressor. You only need to activate this on weapons which can be equipped with a suppressor. If the checkbox is checked on a weapon, the macro uses another sound effect if set up on the "sfx" stat.  
+## Weapon Configuration Options  
+You have several options here, first some general options:  
+![General Weapon Config](https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/ammo_mgm/weapon_config_general.png?raw=true)  
+These are the general configuration options.  
+- **Loaded Ammo** is not needed to be changed unless the players purchase the weapon already loaded. In which case you can enter the correct ammo it comes with here. Otherwise the Ammo Management macro will update this on each reload when the loaded ammo is changed.
+- **Suppressed (Silenced)** means that the weapon has a suppressor attached. This can be changed on-the-fly and will affect the used Sound Effect. It currently has no mechanical influence on the game, it's just for immersion.
+- **Consumable Weapon** is a setting to mark a weapon as consumable. This means that the weapon doesn't use ammunition but *is* the ammo itself so to speak. This is the correct setting for grenades, molotov cocktails, throwing knives and the like. If checked the weapon will not use any ammo (in fact current and max shots have to be `0`), instead it reduces its quantity.  
+Now, you also have several sound effect (SFX) options as well:  
+![Wapon SFX Config](https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/ammo_mgm/weapon_config_sfx.png?raw=true)  
+These sound effects are already explained under "Current Features" above but should also be rather self-explainatory.  
+Don't forget to save when you're done!  
 
-## The sfx stat  
-This is a tricky one, please read carefully:  
-Here you can set up all the sound effects you want in a weapon, seperated by pipe/bar, this is a vertical line and looks like this: |  
-The fact that there are multiple sound effects in a single stat makes it rather crowded and hard to read for the user but it is the best solution I came up with which I can do as of yet.  
-Here is a sample which shows the correct order of the sound effects:  
-`RELOAD|FIRE|AUTOFIRE|SILENCED|SILENCEDAUTOFIRE|EMPTY`  
-I suggest to use this template and populate it with the relative file paths of your sound effects one at a time. The macro will **not** fail if one sound isn't given. You may just leave the default in the template or type "NULL" or something in it. If you want no sounds at all, just leave it empty or don't activate the additional stat at all.  
-- RELOAD: The sfx to be played on reloading the weapon.  
-- FIRE: The sfx to be played on firing the weapon.  
-- AUTOFIRE: This is for automatic guns. Whenever 5 or more bullets are spent, it will use this sound.  
-- SILENCED: This is used if the "silenced" stat is checked instead of the regular FIRE sound.  
-- SILENCEDAUTOFIRE: Same as above but played when 5 or more bullets are spent.  
-- EMPTY: This sound is played when the weapon is empty and the player tries to fire it anyway.  
-Note that currently no three round burst sfx is supported. Doing this would mean introducing two more variables (burst and burst for suppressed weapons). I thought this would be a bit too much. Let me know if you really need it.  
-One of the easiest things to do to get the relative file paths of your weapon sounds is adding them to playlists and then just copy the file path from there into the template.  
-
-### Using the macro for melee SFX  
-You can use the macro to play melee SFX as well. Set the SFX Additional Stat up as so:  
-`ATTACK|FREMZY|IMPROVED`  
-Then set Ammunitions to `MELEE`. This will play a sound effect on an attack and also different SFX for Frenzy attacks and improved Frenzy Attacks. Without BR2 integration (see below) this requires to set the Rate of Fire to `1`, `2` or `3` as well.  
+## Ammo Configuration Options  
+Ammunition has config options as well. These are shown on each item as every item can be used as ammo (except consumables, don't use these as ammo for now). You can access the options in the same way as on weapons:  
+![Ammo SWIM Config](https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/ammo_mgm/ammo_item.png?raw=true)  
+And here are the options available:  
+![Ammo config](https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/ammo_mgm/ammo_item_config.png?raw=true)  
+- **Charge Pack** marks an item as a kind of container for ammo. These might just be a full magazine or a battery or something similar. Charge Packs will always reload a weapon entirely, no matter how many max shots a weapon has.  
+- **Set Ammo ActiveEffect** allows you to assign an active effect to a weapon. Due to core limitations, this option is only available for items in the sidebar or inside a compendium. More detailed instructions on how that works and what it does you can find below.  
 
 # Ammunition  
 The core system currently supports this stat on a weapon but unfortunately it is not shown until you activate the ammo management of the system. But we want to not use the systems default ammo management. I've created a request to also show it when ammo management is disabled. For now we need a workaround though. Fortunately, there is one:  
 
 ## Setting up ammunition  
-Head to the System Settings, click on the "Open Setting Configurator button and find the checkbox for "Ammunition Management". Check it.  
-Now open all your weapon items that use ammunition and click on their "Actions & Effects" tab. You'll find a row called "Ammunition" there. Populate it with the **exact** names of the ammunition items this weapon shall use. I can't stress enough that the names must be **exact**. Double check this.  
-You can actually set up multiple ammunition types for each weapon. To do so, just seperate them with pipe/bar as with the sfx stat above. Here is an example:  
-`Bullets, Large|Bullets, Large (AP)|Bullets, Large (Hollow Point)`  
-Don't use spaces unless the ammo items contain them. If the weapon uses only one ammo type, just enter the **exact** name and forget about the `|`. Ammo items must be of type `gear`.  
-You may also set up ammunition for melee weapons if they use any. Examples inglude the Gunblade from Final Fantasy VIII or the Shishkebab from Fallout. Or a simple ol' chainsaw. You **must not** enter ammunition for melee weapons, those must be marked as consumable weapons (see above), the macro will then use their quantity instead of shots and ammo.  
-When you're done head back to the System Settings, click on the "Open Setting Configurator button and find the checkbox for "Ammunition Management" once again. Uncheck it. This will disable the systems ammo management but unfortunately also hide the "Ammunition" row. Don't worry though, the stat is still stored in the item including whatever you've just entered. The only downside to this workaround is that you can't quickly edit the accepted ammo, so **double check** for **exact** names. You can always activate the Ammunition Management option in the settings to make changes though.  
-
-## Using Better Rolls 2 as a workaround  
-If you're using [Better Rolls 2 (BR2)](https://foundryvtt.com/packages/betterrolls-swade2), you have another workaropund at your disposal: Leave the Ammunition Management enabled in the settings and disable the option "Subtrackt ammo by default" in the Better Rolls 2 module configuration. As long as the players don't use the systems default rolls you'll be fine.  
-For BR2 users there is also a neat integration, allowing you to use the Shooting macro by default when rolling from a weapon.  
+Each weapon has an ammo field provided by the system (found under the "Properties" tab. In SWADE this can only be populated with a single item name. SWIM changes that. You can still use it as in the system or take it one step further by using pipe (`|`) as separator. This means that you can assign a wide variety of ammunition.  
+Let's say your Weapon is supposed to accept the item "Bullets, pistol" as ammo. But there is also "Bullets, pistol (armor piercing)" and "Bullets, pistol (hollow point)". That's easy to achieve in SWIM, just set the ammo on the weapon as this:  
+`Bullets, pistol|Bullets, pistol (armor piercing)|Bullets, pistol (hollow point)`  
+Make sure that you enter the names of your ammo items exactly as they are, otherwise it won't work.  
 
 ## Enabling NPC ammo item usage  
 As of version 0.12.0, the macro supports a way to allow NPCs to fully use the ammo management even if they don't have items representing their spare shots, magazines and the like. The NPCs will still use the ammo that is in the weapon but won't require said ammo item anymore. Weapons that don't require a reloading action (i.e. bows) will just fire infinitely, other wepons (i.e. all weapons with a magazine) will fire until their current shots are at 0 and then need to be reloaded using the Ammo Management macro as usual. But their ammo to reload is infinite.   
 This is now the default behaviour. To activate the former behaviour (NPCs need ammo items in their inventory), just head to the SWIM module settings and activate it.  
 
-# Better Rolls 2 integration  
-If you're using Better Rolls 2, there is a way to fully automate the Shooting part of the macro. Each skill roll from the weapon will then execute the macro, play the sfx (if set up) and use the ammo properly. To set this up you need to set it as a "runSkillMacro" [Global Action](https://github.com/javierriveracastro/betteroll-swade/wiki/Global-Actions) in Better Rolls 2. This is not so difficult as you might think:  
+# Better Rolls integration  
+If you're using Better Rolls for SWADE (BRSW), there is a way to fully automate the Shooting part of the macro. Each skill roll from the weapon will then execute the macro, play the sfx (if set up) and use the ammo properly. To set this up you need to set it as a "runSkillMacro" [Global Action](https://github.com/javierriveracastro/betteroll-swade/wiki/Global-Actions) in Better Rolls. This is not as difficult as you might think:  
 1. Import the macro `SWIM: Ammo usage` from the compendium into your world.  
 2. Head over to your module settings and click on "World Global actions" in the BR2 settings.  
 3. Click "New action".  
 4. Paste the code from [this file](https://raw.githubusercontent.com/SalieriC/SWADE-Immersive-Macros/main/swim/assets/imports/BR2-shooting-integration.json) into the text box.  
 5. Save.   
 
-Before using this though, *make sure to disable the ammo management by BR2* (see above).  
-That is all there is to it. Now, whenever a *Shooting*, *Fighting*, *Athletics* or *Untrained* roll is initiated from a weapon card, the macro will execute and - if it detects circumstances which require it to do its thing - uses the ammo.  
+Before using this though, *make sure to disable the ammo management by BR2*.  
+That is all there is to it. Now, whenever a *Shooting*, *Athletics* or *Untrained* roll is initiated from a weapon card, the macro will execute and - if it detects circumstances which require it to do its thing - uses the ammo.  
 
-## Disabling the BR2 integrated ammo management button  
+## Disabling the BRSW integrated ammo management button  
 This is a bonus for any overachiever out there. This can't be done manually and requires a little bit of coding.  
 1. Locate your `betterrolls-swade2` folder in your foundry `data/modules` folder.  
 2. Open the `templates` folder and locate the `item_card.html`.  
@@ -115,16 +95,17 @@ This is a bonus for any overachiever out there. This can't be done manually and 
 4. Replace `{{# if ammo }}<div class="brws-attribute-buttons">` with `<!--{{# if ammo }}<div class="brws-attribute-buttons">`.  
 6. Replace `</div>{{/if}}` nine lines below with `</div>{{/if}}-->`.  
 
-This will disable the ammo management button from BR2 in the item cards, preventing your players from accidentally using it.  
+This will disable the ammo management button from BR2 in the item cards, preventing your players from accidentally using it.   
+The macro supports a workaround for ranged weapons used in melee (i.e. a javelin used as a spear) by filtering for the used skill. Not a perfect solution but the best that is possible yet.  
 
-## Current problems and limitations  
-~~Currently the macro just guesses the amount of ammo used based on the amount of trait dice. This is prone to errors of course as it will not get the correct amount of shots used for Burst Fire mode, Double Tap and Fanning the Hammer (Deadlands). In these cases I advice to disable the `SWIM: Ammo usage` action in the BR2 chat card before rolling. This issue will hopefully be resolved soon but depends on Better Rolls 2 as the chat card currently does not include the amount of shots the macro can use for proper calculations.~~  
-Has been fixed with BR2 versions **above** 2.36.  
-
-~~Due to current limitations the BR2 integration can also not yet detect wether or not a melee weapon was thrown. This means the macro will fire off all the time if a melee weapon is marked as a consumable weapon but used in melee combat. There are three workarounds, from best to worst:  
-1. Instruct your players to disable the `SWIM: Ammo usage` action in the BR2 chat card before rolling on these specific weapons.  
-2. Set up extra variants of these weapons for thrown purposes.  
-3. Don't use the BR2 integration for Fighting and Athletics (not so great).  
-
-I hope that this issue will be resolved as well once the BR2 chat card includes the amount of ammo used but I'm not sure. I do work on another solution but it seems out of reach anytime soon as well.~~  
-The macro now supports a workaround for this by filtering for the used skill. Not a perfect solution but the best that is possible yet.  
+# Active Effects from Ammo  
+Okay so you have set your "Bullets, pistol (armor piercing)" set as available ammo on your weapon but it doesn't do anything. SWIM has got you covered. As of SWIM v.1.0.0 you can assign Active Effects to your ammo items. Just open the config of your ammo as shown above. You'll find a config option for Active Effects. This is only available for items in the sidebar or a compendium. Due to core limitations you can't do this for items already on an actors sheet.  
+This option will open up an active effect dialogue window you should be familiar with. This can be edited to your liking. Here is an example for armor piercing ammo:  
+![Ammo AE Config](https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/ammo_mgm/ammo_item_config_effect.png?raw=true)
+You can change virtually any setting of a weapon using this. Please note that you **must not use the `@Weapon{WeaponName}[PropertyPath]` notation from the SWADE system here**. Instead you enter a property path directly as if you were editing an actor using an AE. In the above example this is `system.ap` for the armor piercing property of a weapon.*  
+Now that this is done (don't forget to save!), you are ready to go. When dropping the ammo on an actor nothing will happen besides the item being added. But once you load this ammo into a weapon, the configured Active Effect is immediately added to the actor and changed to affect the exact weapon it is loaded in:  
+![Ammo AE added](https://github.com/SalieriC/SWADE-Immersive-Macros/blob/main/img/macros/ammo_mgm/ammo_mgm_loaded_effect.png?raw=true)  
+This is also the reason you must not add the notation to affect items as shown above. The Ammo Management will use the weapons name and set you up.  
+When you change the loaded ammo, the AE is immediately removed.  
+  
+* The most frequently used property is likely `system.ap` to change armor penetration of a weapon. To find other paths you can always ask in the Foundry Discord SWADE channel or if you are a dev just use the console to get a weapon item to figure out the property path you need.  
