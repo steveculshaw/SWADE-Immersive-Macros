@@ -1,5 +1,5 @@
 # Acknowledgement  
-This macro is actually several scripts with one goal: To completely overhaul the ammo usage of the core system by introducing new features, a way to handle grenades and other consumable weapons, sound effects and more. It even supports ammo for melee weapons.  
+This macro is actually several scripts with one goal: To completely overhaul the ammo usage of the core system by introducing new features, a way to handle grenades and other consumable weapons, sound effects and more. It even supports ammo for melee weapons and active effects that come from Ammo.  
 Please read this wiki page carefully to get an idea of the features and how they work.  
 
 ## Current Features:
