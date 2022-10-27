@@ -3,7 +3,7 @@ SWIM is set up to be compatible and even enhance (Better Rolls for Savage Worlds
 ## Introducing Effect Builder to BR2
 As of SWIM version 0.18.0, there is a mighty power(ful) effect builder in SWIM. It can set up a lot of Active Effects (AEs) with their appropriate duration, including those which usually can't be automated, for example Deflection. These are then just empty AEs only there to track the duration of the power. With Better Rolls 2 however you can make the AEs a lot more powerful by setting up [World Global Actions](https://github.com/javierriveracastro/betteroll-swade/wiki/Global-Actions).  
 Below is a list of global actions provided to you.  
-**Please note:** As of Version 1.0.0 of SWIM you don't need to set up these actions in BRSW yourself, SWIM will add these itself as long as you have the BRSW integration setting set to true in the SWIM Settings.  
+**Please note:** As of Version 1.0.0 of SWIM you don't need to set up these actions in BRSW yourself, SWIM will add these itself as long as you have the BRSW integration setting set to true in the SWIM Settings. If you've been using BRSW and SWIM earlier, you'll need to delete those you've set up.  
 
 ### Automating Deflection
 You'll need two World Global Actions for this, set them up like this:  
