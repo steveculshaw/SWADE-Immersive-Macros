@@ -115,28 +115,37 @@ Finally it can also be used to heal the target even if you don't have permission
 - Sound effect  
 
 **Description:**  
-This macro is based on a macro from [@Sky#9453](https://github.com/Sky-Captain-13/foundry) and supported DnD vision and lighting. I altered it to suit Savage Worlds. I have to say though, that information on vision and illumination is very lackluster in SWADE with regards to VTT software. It works fine on an actual tabletop but not with dynamic lighting on VTTs. I had to bring some personal taste in but I tried to stay as true to the rules as I could.  
+This macro was inspired by a macro from [@Sky#9453](https://github.com/Sky-Captain-13/foundry) that supported DnD vision and lighting. I altered it to suit Savage Worlds. For v10 I completely rewrote it and there is almost nothing left from the original. I have to say though, that information on vision and illumination is very lackluster in SWADE with regards to VTT software. It works fine on an actual tabletop but not with dynamic lighting on VTTs. I had to bring some personal taste in but I tried to stay as true to the rules as I could.  
 Here are the options explained:
 **Light Source:**  
 - No Change: Does not change the current settings.
-- None: Deactivates all emit light settings.
+- None: Deactivates all emit light settings from token.
 - Candle: 2" radius of bright light.  
 - Lamp: 4" radius of bright light.  
 - Bullseye: 4" beam of bright light with an angle of 52.5 degree.(1)  
 - Torch: 4" radius of bright light.  
 - Flashlight: 10" beam of bright light in an angle of 52.2 degrees.(1)  
 
+**Illumination:**  
+- No Change: Does not change the current settings.  
+- Full Light / Daylight: Sets the tokens vision and detection mode to 1000" (the maximum allowed by Foundry)  
+- Dim: Sets the tokens vision and detection mode to 1000" as well because there is no clear distinction.  
+- Dark: Sets the tokens vision and detection mode to 10".
+- Pitch Dark: Sets the tokens vision to 0" and detection mode to 1".
+
 **Vision Type:**  
 - No Change: Does not change the current settings.  
-- Pitch Darkness (0"): The token cannot see past itself.  
-- Dark (10"): Token has dim vision of 10".  
-- Dim: Token has dim vision of 1000" (the maximum allowed by Foundry).  
-- Low Light Vision: As dim.  
-- Infravision: As dim.  
-- Full Night Vision: Token has bright vision of 1000" (the maximum allowed by Foundry).  
+- None: Sets the tokens vision to 0" and detection mode to 1" unless Illumination is better.
+- Low Light Vision*: Sets the tokens vision and detection mode to 1000" unless Illumination is better.  
+- Infravision*: Sets the tokens vision to 0" and detection mode to 1000" in the "see heat" mode unless Illumination is better.  
+- Darkvision*: Sets the tokens vision and detection mode to 10" unless Illumination is better.  
+- Night Vision Device: Sets the tokens vision and detection mode to 1000" unless Illumination is better but tints the vision green ("light aplification" mode.  
 
-In general it is best to set up a universal/global light source instead of touching the vision type as that's what SWADE relies on. But the options are there in case the GM forgets to set it up and needs to act quickly.  
 Additionally, the user can set up a light colour for the light source and it will be animated with the "torch" animation from core, but rather subtle.  
+
+**The illumination level** can be set to a default by the GM in the scenes lighting section on the left. There is a button that lets you configure the default for players for that scene.
+
+**WARNING:** This macro will **irreversibly overwrite your configured detection modes on the token!** This is because it's really hard to deal with them atm. It will set up "Basic sight" and "See heat" as the others are not that useful for SWADE right now. I will adjust that when this changes.
 
 ### Chase Setup  
 **Requirements:** Chase layouts/scenes (included in a compendium) and a roll table with card images.  
