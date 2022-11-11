@@ -117,14 +117,15 @@ Finally it can also be used to heal the target even if you don't have permission
 **Description:**  
 This macro was inspired by a macro from [@Sky#9453](https://github.com/Sky-Captain-13/foundry) that supported DnD vision and lighting. I altered it to suit Savage Worlds. For v10 I completely rewrote it and there is almost nothing left from the original. I have to say though, that information on vision and illumination is very lackluster in SWADE with regards to VTT software. It works fine on an actual tabletop but not with dynamic lighting on VTTs. I had to bring some personal taste in but I tried to stay as true to the rules as I could.  
 Here are the options explained:  
+  
 **Light Source:**  
 - No Change: Does not change the current settings.
 - None: Deactivates all emit light settings from token.
 - Candle: 2" radius of bright light.  
 - Lamp: 4" radius of bright light.  
-- Bullseye: 4" beam of bright light with an angle of 52.5 degree.(1)  
+- Bullseye: 4" beam of bright light with an angle of 52.5 degree.  
 - Torch: 4" radius of bright light.  
-- Flashlight: 10" beam of bright light in an angle of 52.2 degrees.(1)  
+- Flashlight: 10" beam of bright light in an angle of 52.2 degrees.  
 
 **Illumination:**  
 - No Change: Does not change the current settings.  
@@ -140,6 +141,7 @@ Here are the options explained:
 - Infravision`*`: Sets the tokens vision to 0" and detection mode to 1000" in the "see heat" mode unless Illumination is better.  
 - Darkvision`*`: Sets the tokens vision and detection mode to 10" unless Illumination is better.  
 - Night Vision Device: Sets the tokens vision and detection mode to 1000" unless Illumination is better but tints the vision green ("light aplification" mode.  
+
 `*` Only available if the actor has a special ability called like the mode.
 
 Additionally, the user can set up a light colour for the light source and it will be animated with the "torch" animation from core, but rather subtle.  
