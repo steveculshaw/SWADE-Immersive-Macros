@@ -136,10 +136,11 @@ Here are the options explained:
 **Vision Type:**  
 - No Change: Does not change the current settings.  
 - None: Sets the tokens vision to 0" and detection mode to 1" unless Illumination is better.
-- Low Light Vision*: Sets the tokens vision and detection mode to 1000" unless Illumination is better.  
-- Infravision*: Sets the tokens vision to 0" and detection mode to 1000" in the "see heat" mode unless Illumination is better.  
-- Darkvision*: Sets the tokens vision and detection mode to 10" unless Illumination is better.  
+- Low Light Vision`*`: Sets the tokens vision and detection mode to 1000" unless Illumination is better.  
+- Infravision`*`: Sets the tokens vision to 0" and detection mode to 1000" in the "see heat" mode unless Illumination is better.  
+- Darkvision`*`: Sets the tokens vision and detection mode to 10" unless Illumination is better.  
 - Night Vision Device: Sets the tokens vision and detection mode to 1000" unless Illumination is better but tints the vision green ("light aplification" mode.  
+`*` Only available if the actor has a special ability called like the mode.
 
 Additionally, the user can set up a light colour for the light source and it will be animated with the "torch" animation from core, but rather subtle.  
 
