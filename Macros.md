@@ -116,7 +116,7 @@ Finally it can also be used to heal the target even if you don't have permission
 
 **Description:**  
 This macro was inspired by a macro from [@Sky#9453](https://github.com/Sky-Captain-13/foundry) that supported DnD vision and lighting. I altered it to suit Savage Worlds. For v10 I completely rewrote it and there is almost nothing left from the original. I have to say though, that information on vision and illumination is very lackluster in SWADE with regards to VTT software. It works fine on an actual tabletop but not with dynamic lighting on VTTs. I had to bring some personal taste in but I tried to stay as true to the rules as I could.  
-Here are the options explained:
+Here are the options explained:  
 **Light Source:**  
 - No Change: Does not change the current settings.
 - None: Deactivates all emit light settings from token.
