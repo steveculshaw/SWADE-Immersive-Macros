@@ -115,7 +115,7 @@ Finally it can also be used to heal the target even if you don't have permission
 - Sound effect  
 
 **Description:**  
-This macro was inspired by a macro from [@Sky#9453](https://github.com/Sky-Captain-13/foundry) that supported DnD vision and lighting. I altered it to suit Savage Worlds. For v10 I completely rewrote it and there is almost nothing left from the original. I have to say though, that information on vision and illumination is very lackluster in SWADE with regards to VTT software. It works fine on an actual tabletop but not with dynamic lighting on VTTs. I had to bring some personal taste in but I tried to stay as true to the rules as I could.  
+This macro was inspired by a macro from [@Sky#9453](https://github.com/Sky-Captain-13/foundry) that supported DnD vision and lighting. I altered it to suit Savage Worlds. For v10 I completely rewrote it and there is almost nothing left from the original. I have to say though, that information on vision and illumination is very lackluster in SWADE with regards to VTT software. It works fine on an actual tabletop but not with dynamic lighting on VTTs. I had to bring some personal taste in but I tried to stay as true to the rules as I could. For that reason I'm also using SWPF rules where those are more precise.  
 Here are the options explained:  
   
 **Light Source:**  
@@ -130,17 +130,17 @@ Here are the options explained:
 **Illumination:**  
 - No Change: Does not change the current settings.  
 - Full Light / Daylight: Sets the tokens vision and detection mode to 1000" (the maximum allowed by Foundry)  
-- Dim: Sets the tokens vision and detection mode to 1000" as well because there is no clear distinction.  
+- Dim: Sets the tokens vision and detection mode to 25" (there is no clear distinction in SWADE but SWPF uses that number so I'm using it).  
 - Dark: Sets the tokens vision and detection mode to 10".
 - Pitch Dark: Sets the tokens vision to 0" and detection mode to 1".
 
 **Vision Type:**  
 - No Change: Does not change the current settings.  
 - None: Sets the tokens vision to 0" and detection mode to 1" unless Illumination is better.
-- Low Light Vision`*`: Sets the tokens vision and detection mode to 1000" unless Illumination is better.  
-- Infravision`*`: Sets the tokens vision to 0" and detection mode to 1000" in the "see heat" mode unless Illumination is better.  
+- Low Light Vision`*`: Sets the tokens vision and detection mode to 25" unless Illumination is better.  
+- Infravision`*`: Sets the tokens vision to 0" and detection mode to 25" in the "see heat" mode unless Illumination is better.  
 - Darkvision`*`: Sets the tokens vision and detection mode to 10" unless Illumination is better.  
-- Night Vision Device: Sets the tokens vision and detection mode to 1000" unless Illumination is better but tints the vision green ("light aplification" mode).  
+- Night Vision Device: Sets the tokens vision and detection mode to 25" unless Illumination is better but tints the vision green ("light aplification" mode).  
 
 `*` Only available if the actor has a special ability called like the mode.
 
