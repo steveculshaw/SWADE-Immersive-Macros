@@ -69,9 +69,9 @@ This just plays the sfx with the provided settings for everyone.
 - `volume` {number}: The volume level on which to play the audio between 0 and 1. Will use default settings of SWIM if undefined.  
 - `playForAll` {boolean}: Determines whether or not the SFX should be played for everyone (true) or just the current user (false). It defaults to true.
 
-### Get Folder Contents
+### Get Folder Content
 This returns all contents of a folder and its sub-folders up to three layers deep, regardless of permission.  
-`swim.get_folder_contents(folderName)`  
+`swim.get_folder_content(folderName)`  
 - `folderName` {string}: A unique folder name.  
 
 ### Run Migration
