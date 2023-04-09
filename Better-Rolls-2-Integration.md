@@ -1,12 +1,15 @@
-SWIM is set up to be compatible and even enhance (Better Rolls for Savage Worlds)[https://foundryvtt.com/packages/betterrolls-swade2] (aka BRSW aka BR2) from ground up. It is currently not possible to initiate rolls like the one from the Unshake macro but other than that, there are several things you can do to make BR2 und SWIM work together in harmony.  
+SWIM is set up to be compatible and even enhance [Better Rolls for Savage Worlds](https://foundryvtt.com/packages/betterrolls-swade2) (aka BRSW aka BR2) from ground up. It is currently not possible to initiate rolls like the one from the Unshake macro but other than that, there are several things you can do to make BR2 und SWIM work together in harmony.  
 
 ## Introducing Effect Builder to BR2
+
 As of SWIM version 0.18.0, there is a mighty power(ful) effect builder in SWIM. It can set up a lot of Active Effects (AEs) with their appropriate duration, including those which usually can't be automated, for example Deflection. These are then just empty AEs only there to track the duration of the power. With Better Rolls 2 however you can make the AEs a lot more powerful by setting up [World Global Actions](https://github.com/javierriveracastro/betteroll-swade/wiki/Global-Actions).  
 Below is a list of global actions provided to you.  
 **Please note:** As of Version 1.0.0 of SWIM you don't need to set up these actions in BRSW yourself, SWIM will add these itself as long as you have the BRSW integration setting set to true in the SWIM Settings. If you've been using BRSW and SWIM earlier, you'll need to delete those you've set up.  
 
 ### Automating Deflection
+
 You'll need two World Global Actions for this, set them up like this:  
+
 ```json
 {
     "id": "DEFLECTION-RANGE",
@@ -151,7 +154,9 @@ and this:
 Those two will ensure that BR2 automatically subtracts the appropriate amount (-2 and -4 respectively) from attack rolls that are from weapon type items. As per the SWADE core rules this should be everything.
 
 ### Automating Arcane Protection
+
 It works exactly like the (in my experience much more common) Deflection setup above. Just paste these two:  
+
 ```json
 {
     "id": "ARCANE_PROTECTION",
@@ -217,10 +222,13 @@ It works exactly like the (in my experience much more common) Deflection setup a
     "group": "Target"
 }
 ```
+
 **Please note** that this will also affect friendly powers! Sadly there currently is no way to exclude friendly powers from it. This may change in the future so make sure to check back here frequently.
 
 ### Automating Empathy
+
 As above, just for the empathy power this time.  
+
 ```json
 {
     "id": "EMPATHY",
@@ -312,7 +320,9 @@ As above, just for the empathy power this time.
 ```
 
 ### Automating Invisibility
+
 As above, just for the empathy power this time. It will also take the Detect Arcana effect into consideration, negating some of the penalties from invisible. Do accomplish this, three global actions are needed:  
+
 ```json
 {
     "id": "INVISIBLE",

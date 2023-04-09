@@ -1,7 +1,9 @@
 In here you'll find guides on how to do things with modules on Foundry specifically tailored to the SWADE system. Those guides are **not related to SWIM** but you might find them useful regardless. Just ignore them if you have no interest in the modules presented on this page.  
   
 # Building in three dimensions (Levels & Wall Height)
+
 [The Ripper](https://github.com/theripper93) has a whole lot of exciting modules for Foundry VTT but [Levels](https://github.com/theripper93/Levels) is particularly intriguing as it lets you build maps in three dimensions without having to mess with three-dimensional assets. If you want to do that for your system let me tell you two things:
+
 1. It makes prep-time explode somewhat as you'll have to put a lot more thought and effort in creating your maps, but
 2. it is not as difficult as it sounds and is so worth the extra effort.  
   
