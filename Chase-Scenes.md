@@ -16,7 +16,7 @@ These fonts are used with permission and mentioned here for credit and reference
 
 ## Setting up a custom background  
 
-You can set up a custom background for these layouts by simply editing the scenes background image. By doing this however, the scenes properties may change. **It is of utmost importancy to keep the original properties.** These are as follows:  
+You can set up a custom background for these layouts by simply editing the scenes background image. By doing this however, the scenes properties may change. **It is of utmost importance to keep the original properties.** These are as follows:  
 
 ### Scene Dimensions  
 
